@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <windows.h>
 
 int main()
 {
@@ -43,7 +44,7 @@ int main()
 	std::cout << "   T___O  O________________T_____O  O__|" << std::endl;
 	std::cout << "        OO                        OO    " << std::endl;
 
-	std::cout << "How many Tacos would you like? \n >";
+	/*std::cout << "How many Tacos would you like? \n >";
 	std::cin >> tacosOrdered;
 	std::cout << "How many burritos would you like? \n >";
 	std::cin >> burritosOrdered;
@@ -60,14 +61,29 @@ int main()
 	std::cout << "How many potato ollas would you like? \n >";
 	std::cin >> potatoOllasOrdered;
 	std::cout << "How many FrESheVacadoS would you like? \n >";
-	std::cin >> frEShAVacaDoOrdered;
+	std::cin >> frEShAVacaDoOrdered;*/
+
+	/*std::cout << "-------------------------Menu---------------------------" << std::endl;
+	std::cout << "Taco ------- $0.99		Churro ----------- $1.25" << std::endl;
+	std::cout << "Burrito ---- $1.99		Supreme Burrito -- $4.50" << std::endl;
+	std::cout << "Enchilada -- $2.99		Potatos Ollas ---- $1.99" << std::endl;
+	std::cout << "Tostadoas -- $1.50		Drinks ----------- $0.99" << std::endl;
+	std::cout << "What would you like?" << std::endl;*/
+
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	SetConsoleTextAttribute(hConsole, (FOREGROUND_GREEN | FOREGROUND_BLUE));
+	std::cout << "HEllo" << std::endl;
+
+	SetConsoleTextAttribute(hConsole, (FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN));
+	std::cout << "kjh" << std::endl;
+
+	
 
 	total = ((tacos * tacosOrdered) + (burritos * burritosOrdered) + (enchiladas * enchiladasOrdered) + (tostadoas * tostadoasOrdered)
 		+ (drink * drinkOrdered) + (churro * churrosOrdered) + (supremeBurrito * supremeBurritosOrdered) + (potatoOllas * potatoOllasOrdered) + (frEShAVacaDo * frEShAVacaDoOrdered)) * tax;
 	std::cout << "Your total is ----- " << std::fixed << std::setprecision(2) << std::setfill('0') << total << std::endl;
 
-	//std::cout << "What would you like?" << std::endl;
-	
 	system("pause");
 	return 0;
 
