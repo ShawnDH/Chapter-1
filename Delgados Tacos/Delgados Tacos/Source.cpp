@@ -31,6 +31,7 @@ int main()
 	int supremeBurritosOrdered;
 	int potatoOllasOrdered;
 	int frEShAVacaDoOrdered;
+	int order;
 
 	std::cout << "     ---Welcome To Delgados Tacos---    " << std::endl;
 	std::cout << "   _________________________            " << std::endl;
@@ -63,21 +64,24 @@ int main()
 	std::cout << "How many FrESheVacadoS would you like? \n >";
 	std::cin >> frEShAVacaDoOrdered;*/
 
-	/*std::cout << "-------------------------Menu---------------------------" << std::endl;
-	std::cout << "Taco ------- $0.99		Churro ----------- $1.25" << std::endl;
-	std::cout << "Burrito ---- $1.99		Supreme Burrito -- $4.50" << std::endl;
-	std::cout << "Enchilada -- $2.99		Potatos Ollas ---- $1.99" << std::endl;
-	std::cout << "Tostadoas -- $1.50		Drinks ----------- $0.99" << std::endl;
-	std::cout << "What would you like?" << std::endl;*/
+	std::cout << "----------------------------Menu------------------------------" << std::endl;
+	std::cout << "1. Taco ------- $0.99		5. Churro ----------- $1.25" << std::endl;
+	std::cout << "2. Burrito ---- $1.99		6. Supreme Burrito -- $4.50" << std::endl;
+	std::cout << "3. Enchilada -- $2.99		7. Potatos Ollas ---- $1.99" << std::endl;
+	std::cout << "4. Tostadoas -- $1.50		8. Drinks ----------- $0.99" << std::endl;
+	std::cout << "What would you like?" << std::endl;
+	std::cin >> order;
 
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-
-	SetConsoleTextAttribute(hConsole, (FOREGROUND_GREEN | FOREGROUND_BLUE));
-	std::cout << "HEllo" << std::endl;
-
-	SetConsoleTextAttribute(hConsole, (FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN));
-	std::cout << "kjh" << std::endl;
-
+	if (order == 1)
+	{
+		std::cout << ("How many Tacos would you like? \n >");
+		std::cin >> tacosOrdered;
+	}
+	else
+	{
+		std::cout << ("ERROR: Please insert #");
+		std::cin >> tacosOrdered;
+	}
 	
 
 	total = ((tacos * tacosOrdered) + (burritos * burritosOrdered) + (enchiladas * enchiladasOrdered) + (tostadoas * tostadoasOrdered)
