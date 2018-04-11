@@ -1,8 +1,6 @@
 //Delgados Tacos
 //03/28/2018
 //Author: ShawnD Herrick
-
-
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -31,7 +29,8 @@ int main()
 	int supremeBurritosOrdered;
 	int potatoOllasOrdered;
 	int frEShAVacaDoOrdered;
-	int order;
+	int anythingElse;
+	std::string order;
 
 	std::cout << "     ---Welcome To Delgados Tacos---    " << std::endl;
 	std::cout << "   _________________________            " << std::endl;
@@ -45,44 +44,28 @@ int main()
 	std::cout << "   T___O  O________________T_____O  O__|" << std::endl;
 	std::cout << "        OO                        OO    " << std::endl;
 
-	/*std::cout << "How many Tacos would you like? \n >";
-	std::cin >> tacosOrdered;
-	std::cout << "How many burritos would you like? \n >";
-	std::cin >> burritosOrdered;
-	std::cout << "How many enchilads would you like? \n >";
-	std::cin >> enchiladasOrdered;
-	std::cout << "How many tostadoas would you like? \n >";
-	std::cin >> tostadoasOrdered;
-	std::cout << "How many drinks would you like? \n >";
-	std::cin >> drinkOrdered;
-	std::cout << "How many churros would you like? \n >";
-	std::cin >> churrosOrdered;
-	std::cout << "How many supreme burritos would you like? \n >";
-	std::cin >> supremeBurritosOrdered;
-	std::cout << "How many potato ollas would you like? \n >";
-	std::cin >> potatoOllasOrdered;
-	std::cout << "How many FrESheVacadoS would you like? \n >";
-	std::cin >> frEShAVacaDoOrdered;*/
-
 	std::cout << "----------------------------Menu------------------------------" << std::endl;
 	std::cout << "1. Taco ------- $0.99		5. Churro ----------- $1.25" << std::endl;
 	std::cout << "2. Burrito ---- $1.99		6. Supreme Burrito -- $4.50" << std::endl;
 	std::cout << "3. Enchilada -- $2.99		7. Potatos Ollas ---- $1.99" << std::endl;
 	std::cout << "4. Tostadoas -- $1.50		8. Drinks ----------- $0.99" << std::endl;
-	std::cout << "What would you like?" << std::endl;
-	std::cin >> order;
+	do{
+		std::cout << "What would you like?" << std::endl;
+		std::cin >> order;
+		if (order == "Taco" || order == "taco" || order == "Tacos" || order == "tacos")
+		{
+			std::cout << ("How many Tacos would you like? \n >");
+			std::cin >> tacosOrdered;
+		}
+		else if (order == "Burrito" || order == "Burritos" || order == "burritos" || order == "burrito")
+		{
+			std::cout << ("How many Burritos would you like? \n >");
+			std::cin >> burritosOrdered;
+		}
 
-	if (order == 1)
-	{
-		std::cout << ("How many Tacos would you like? \n >");
-		std::cin >> tacosOrdered;
-	}
-	else
-	{
-		std::cout << ("ERROR: Please insert #");
-		std::cin >> tacosOrdered;
-	}
-	
+		std::cout << "Would you like anything else? \n 1 for Yes  or   2 for No \n >";
+		std::cin >> anythingElse;
+	} while (anythingElse != 1);
 
 	total = ((tacos * tacosOrdered) + (burritos * burritosOrdered) + (enchiladas * enchiladasOrdered) + (tostadoas * tostadoasOrdered)
 		+ (drink * drinkOrdered) + (churro * churrosOrdered) + (supremeBurrito * supremeBurritosOrdered) + (potatoOllas * potatoOllasOrdered) + (frEShAVacaDo * frEShAVacaDoOrdered)) * tax;
