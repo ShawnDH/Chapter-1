@@ -30,7 +30,9 @@ int main()
 	int potatoOllasOrdered = 0;
 	int frEShAVacaDoOrdered = 0;
 	int anythingElse = 0;
+	int drinkCount = 0;
 	std::string order;
+	std::string drinkType;
 
 	std::cout << "     ---Welcome To Delgados Tacos---    " << std::endl;
 	std::cout << "   _________________________            " << std::endl;
@@ -77,7 +79,7 @@ int main()
 			std::cout << ("How many Churro would you like? \n >");
 			std::cin >> churrosOrdered;
 		}
-		else if (order == "Supreme Burrito" || order == "supreme burrito" || order == "Supreme burrito" || order == "supreme Burrito" || "Supreme Burritos" || "Supreme burritos" || "supreme Burritos" || "supreme burritos")
+	    else if (order == "Supreme Burrito" || order == "supreme burrito" || order == "Supreme burrito" || order == "supreme Burrito")
 		{
 			std::cout << ("How many Supreme Burritos would you like? \n >");
 			std::cin >> supremeBurritosOrdered;
@@ -87,9 +89,32 @@ int main()
 			std::cout << ("How many Potato Ollas would you like? \n >");
 			std::cin >> potatoOllasOrdered;
 		}
-
-		std::cout << "Would you like anything else? \n 1 for Yes  or   2 for No \n >";
+		else if (order == "Drinks" || order == "drinks" || order == "Drink" || order == "drink")
+		{
+			std::cout << "------Drinks------" << std::endl;
+			std::cout << "Pepsi ------ $0.99" << std::endl;
+			std::cout << "Sprite ----- $0.99" << std::endl;
+			std::cout << "Root Beer -- $0.99" << std::endl;
+			std::cout << "How many drinks would you like? \n >";
+			std::cin >> drinkOrdered;
+			while (drinkOrdered - 1 != drinkCount)
+			{
+				std::cout << "What type of drink would you like for drink #" << drinkCount + 1 << std::endl;
+				std::cin >> drinkType;
+				drinkCount = drinkCount + 1;
+			}
+		}
+		else
+		{
+			std::cout << "ERROR: Order not found." << std::endl;
+		}
+		std::cout << "Would you like to anything else? \n 1 for Yes  or   2 for No \n >";
 		std::cin >> anythingElse;
+		/*do
+		{
+			std::cout << "Sorry, I didn't get that. Please try again.\n Would you like to anything else? \n 1 for Yes  or   2 for No \n >";
+			std::cin >> anythingElse;
+		} while (anythingElse != 1 | 2);*/
 	} while (anythingElse != 2);
 
 	total = ((tacos * tacosOrdered) + (burritos * burritosOrdered) + (enchiladas * enchiladasOrdered) + (tostadoas * tostadoasOrdered)
