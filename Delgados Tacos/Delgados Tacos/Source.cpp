@@ -18,18 +18,18 @@ int main()
 	double potatoOllas = 1.99;
 	double frEShAVacaDo = 9.99;
 	double tax = 1.07;
-	double total;
+	double total = 0;
 
-	int tacosOrdered;
-	int burritosOrdered;
-	int enchiladasOrdered;
-	int tostadoasOrdered;
-	int drinkOrdered;
-	int churrosOrdered;
-	int supremeBurritosOrdered;
-	int potatoOllasOrdered;
-	int frEShAVacaDoOrdered;
-	int anythingElse;
+	int tacosOrdered = 0;
+	int burritosOrdered = 0;
+	int enchiladasOrdered = 0;
+	int tostadoasOrdered = 0;
+	int drinkOrdered = 0;
+	int churrosOrdered = 0;
+	int supremeBurritosOrdered = 0;
+	int potatoOllasOrdered = 0;
+	int frEShAVacaDoOrdered = 0;
+	int anythingElse = 0;
 	std::string order;
 
 	std::cout << "     ---Welcome To Delgados Tacos---    " << std::endl;
@@ -62,10 +62,35 @@ int main()
 			std::cout << ("How many Burritos would you like? \n >");
 			std::cin >> burritosOrdered;
 		}
+		else if (order == "Enchilada" || order == "enchilada" || order == "Enchiladas" || order == "enchiladas")
+		{
+			std::cout << ("How many Enchiladas would you like? \n >");
+			std::cin >> enchiladasOrdered;
+		}
+		else if (order == "Tostadoa" || order == "tostadoa" || order == "tostadoas" || order == "Tostadoas")
+		{
+			std::cout << ("How many Tostadoas would you like? \n >");
+			std::cin >> tostadoasOrdered;
+		}
+		else if (order == "Churro" || order == "Churros" || order == "churro" || order == "churros")
+		{
+			std::cout << ("How many Churro would you like? \n >");
+			std::cin >> churrosOrdered;
+		}
+		else if (order == "Supreme Burrito" || order == "supreme burrito" || order == "Supreme burrito" || order == "supreme Burrito" || "Supreme Burritos" || "Supreme burritos" || "supreme Burritos" || "supreme burritos")
+		{
+			std::cout << ("How many Supreme Burritos would you like? \n >");
+			std::cin >> supremeBurritosOrdered;
+		}
+		else if (order == "Potato Ollas" || order == "potato ollas" || order == "Potato ollas" || order == "potato Ollas")
+		{
+			std::cout << ("How many Potato Ollas would you like? \n >");
+			std::cin >> potatoOllasOrdered;
+		}
 
 		std::cout << "Would you like anything else? \n 1 for Yes  or   2 for No \n >";
 		std::cin >> anythingElse;
-	} while (anythingElse != 1);
+	} while (anythingElse != 2);
 
 	total = ((tacos * tacosOrdered) + (burritos * burritosOrdered) + (enchiladas * enchiladasOrdered) + (tostadoas * tostadoasOrdered)
 		+ (drink * drinkOrdered) + (churro * churrosOrdered) + (supremeBurrito * supremeBurritosOrdered) + (potatoOllas * potatoOllasOrdered) + (frEShAVacaDo * frEShAVacaDoOrdered)) * tax;
