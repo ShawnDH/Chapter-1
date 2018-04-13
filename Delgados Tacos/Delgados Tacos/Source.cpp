@@ -110,11 +110,11 @@ int main()
 		}
 		std::cout << "Would you like to anything else? \n 1 for Yes  or   2 for No \n >";
 		std::cin >> anythingElse;
-		/*do
+		if (anythingElse != 1 | 2);
 		{
 			std::cout << "Sorry, I didn't get that. Please try again.\n Would you like to anything else? \n 1 for Yes  or   2 for No \n >";
 			std::cin >> anythingElse;
-		} while (anythingElse != 1 | 2);*/
+		}
 	} while (anythingElse != 2);
 
 	total = ((tacos * tacosOrdered) + (burritos * burritosOrdered) + (enchiladas * enchiladasOrdered) + (tostadoas * tostadoasOrdered)
